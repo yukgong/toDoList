@@ -8,7 +8,7 @@ function paintDoneToDos(text, id){
 
     const doneToDoText = document.createElement('span');
     doneToDoText.innerText = text;
-    doneToDoText.classList.add('doneText');
+    doneToDoText.classList.add('doneText'); 
 
     const doneDeleteBtn = document.createElement('button');
     doneDeleteBtn.innerText = '❌';
