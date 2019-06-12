@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.form,
+.greeting{
+    display: none;
+}
+
+.showing{
+    display: block;
+}
+
+.list{
+    width: auto;
+}
+
+.list > div {
+    padding-right: 4px;
+}
+
+.checked{
+    text-decoration-line: line-through;
+
+}
+
+.list{
+
+}
