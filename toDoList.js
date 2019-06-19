@@ -26,7 +26,7 @@ function deleteDoneToDo(ev){
 
 // 완료 버튼 핸들러
 function handleDoneList(ev){
-    console.log('done button click...');
+    console.log('done button click...'); 
     const donebtn = ev.target;
     const listItem = donebtn.parentNode;
     listItem.classList.add('doneList');
