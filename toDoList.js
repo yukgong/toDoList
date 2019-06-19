@@ -21,6 +21,28 @@ function deleteDoneToDo(ev){
     });
 
     doneToDos = removeDoneToDo_LS;
+
+    // 삭제 버튼을 누를때 마다 doneToDos의 전체 배열의 id 값이 -1씩 감소하라.
+    const changeDoneToDo_LS = doneToDos.map(function(item) { 
+        const liText = item.text;
+
+        function makeNumber(){
+            for(i = 1; i < doneToDos.length; i++){
+                console.log(i)
+            }
+        } 
+        
+        for(i = 1; i < doneToDos.length; i++){}
+        return doneToDos = {
+            text: liText,
+            id: makeNumber()
+        }
+    }
+
+    });
+
+    doneToDos = changeDoneToDo_LS;
+    
     localStorage.setItem(DONE_ITEM, JSON.stringify(doneToDos));
 }
 
@@ -31,16 +53,15 @@ function handleDoneList(ev){
     const listItem = donebtn.parentNode;
     listItem.classList.add('doneList');
     listItem.classList.remove('list');
-    
 
     //html에 있는 done 아이템의 text와 id를 찾는다.
-    const ListItemChildText = listItem.childNodes[1].innerText;
-    const ListItemChildId = doneToDos.length + 1;
+    const listItemChildText = listItem.childNodes[1].innerText;
+    const listItemChildId = doneToDos.length + 1;
 
     // 찾은 개별 요소를 묶어준다.
      const doneObject = {
-         text: ListItemChildText,
-         id: ListItemChildId
+         text: listItemChildText,
+         id: listItemChildId
      }; 
     // 로컬에 있는 doneToDos에 묶인 done 요소를 넣어준다.
     doneToDos.push(doneObject);
@@ -49,11 +70,10 @@ function handleDoneList(ev){
     localStorage.setItem(DONE_ITEM, JSON.stringify(doneToDos));
 
     // doneToDos를 스크린에 보여준다.
-    paintDoneToDos(ListItemChildText, ListItemChildId - 1);
-
-    toDoList.removeChild(listItem);
+    paintDoneToDos(listItemChildText, listItemChildId - 1);
 
     //로컬 저장소의 toDos 값에서 삭제된다.
+    toDoList.removeChild(listItem);
     const removeAtLocalStorage = toDos.filter(function(toDo) {
         return toDo.id !== parseInt(listItem.id);
     });

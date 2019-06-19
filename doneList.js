@@ -4,7 +4,9 @@ function paintDoneToDos(text, id){
     const doneLi = document.createElement('li');
     doneLi.classList.add('doneList');
     
+    doneToDos.length + 1;
     doneLi.id = id + 1;
+  
 
     const doneToDoText = document.createElement('span');
     doneToDoText.innerText = text;
@@ -38,7 +40,7 @@ function loadDoneToDos(){
 
         //객체형태로 변환된 할일 각각에 paintDoneToDos 함수를 실행시킨다.
         changeStringToObj.forEach(function(text, id){
-            paintDoneToDos(text.text, id,id);
+            paintDoneToDos(text.text, id.id);
         });
     }
 }
